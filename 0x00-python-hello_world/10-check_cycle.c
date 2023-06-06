@@ -4,14 +4,14 @@
  *
  * @head: linked list head pointer
  *
- * Return: 0 if there is no cycle, 1 if there is a cycle
+ * Return: 0 if there is no cycle, 1 if there is a cycle, -1 if it fails
  */
 int check_cycle(listint_t *head)
 {
 	listint_t *slow = NULL, *fast = NULL;
 
 	if (head == NULL)
-		return (0);
+		return (-1);
 
 	slow = head->next;
 	fast = head->next->next;
