@@ -14,12 +14,7 @@ int is_palindrome(listint_t **head)
 	if (head == NULL || *head == NULL)
 		return (1);
 
-	temp = *head;
-	while (temp != NULL)
-	{
-		temp = temp->next;
-		len++;
-	}
+	len = linked_list_len(head);
 	if (len % 2 != 0)
 		return (0);
 
@@ -37,4 +32,24 @@ int is_palindrome(listint_t **head)
 			return (0);
 	}
 	return (1);
+}
+/**
+ * linked_list_len - how many nodes in a linked list
+ *
+ * @h: pointer of first node of a linked list
+ *
+ * Return: length of a listint_t list
+ */
+int linked_list_len(listint_t **h)
+{
+	int len = 0;
+	listint_t *temp = NULL;
+
+	temp = *h;
+	while (temp != NULL)
+	{
+		temp = temp->next;
+		len++;
+	}
+	return (len);
 }
