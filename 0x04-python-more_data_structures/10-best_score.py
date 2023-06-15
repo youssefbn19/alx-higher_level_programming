@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-from functools import reduce
-
-
 def best_score(a_dictionary):
+    from functools import reduce
+
     a_dict = a_dictionary
     if a_dict is not None:
         best_score = reduce(
