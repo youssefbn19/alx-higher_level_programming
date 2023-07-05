@@ -3,9 +3,9 @@
 
 
 class Rectangle:
+    """ Class that defines a rectangle """
     number_of_instances = 0
 
-    """ Class that defines a rectangle """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -60,5 +60,4 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        if Rectangle.number > 0:
-            Rectangle.number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
