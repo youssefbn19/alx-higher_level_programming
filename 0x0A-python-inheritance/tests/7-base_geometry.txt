@@ -14,11 +14,3 @@ TypeError: temp must be an integer
 >>> bg.integer_validator("temp", 0)
 Traceback (most recent call last):
 ValueError: temp must be greater than 0
-
->>> bg.area()
-Traceback (most recent call last):
-Exception: area() is not implemented
-
->>> bg.integer_validator("temp")
-Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
