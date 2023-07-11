@@ -17,3 +17,7 @@
 
 >>> my_list
 [3, 0, -32, 2, 11, 13]
+
+>>> l = MyList()
+>>> l.print_sorted()
+[]
