@@ -1,0 +1,19 @@
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+
+>>> my_list.append(3)
+>>> my_list.append(0)
+>>> my_list.append(-32)
+>>> my_list.append(2)
+>>> my_list.append(11)
+>>> my_list.append(13)
+
+>>> my_list
+[3, 0, -32, 2, 11, 13]
+
+>>> my_list.print_sorted()
+[-32, 0, 2, 3, 11, 13]
+
+>>> my_list
+[3, 0, -32, 2, 11, 13]
