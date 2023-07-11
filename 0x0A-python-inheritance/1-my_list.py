@@ -13,6 +13,4 @@ class MyList(list):
         """
         prints the list, but sorted (ascending sort)
         """
-        cpy = self.copy()
-        cpy.sort()
-        print(cpy)
+        print(sorted(self))
