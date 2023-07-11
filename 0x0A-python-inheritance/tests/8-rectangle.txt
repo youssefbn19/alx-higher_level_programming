@@ -1,0 +1,49 @@
+>>> Rectangle = __import__('8-rectangle').Rectangle
+
+>>> r = Rectangle(10, 25) 
+
+>>> r = Rectangle(-10, 25) 
+Traceback (most recent call last):
+ValueError: width must be greater than 0
+
+>>> r = Rectangle(10, -25) 
+Traceback (most recent call last):
+ValueError: height must be greater than 0
+
+>>> r = Rectangle("2feet", 25) 
+Traceback (most recent call last):
+TypeError: width must be an integer
+
+>>> r = Rectangle(2, "25 long") 
+Traceback (most recent call last):
+TypeError: height must be an integer
+
+>>> r.width 
+Traceback (most recent call last):
+AttributeError: 'Rectangle' object has no attribute 'width'
+
+>>> r.height 
+Traceback (most recent call last):
+AttributeError: 'Rectangle' object has no attribute 'height'
+
+>>> r.__height 
+Traceback (most recent call last):
+AttributeError: 'Rectangle' object has no attribute '__height'
+
+>>> r.__width 
+Traceback (most recent call last):
+AttributeError: 'Rectangle' object has no attribute '__width'
+
+>>> r.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> r.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> r.integer_validator("age", -40)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> r.integer_validator("age", 40)
