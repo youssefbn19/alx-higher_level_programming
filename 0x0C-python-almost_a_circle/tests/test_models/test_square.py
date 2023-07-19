@@ -21,9 +21,13 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(self.s1.x, 0)
         self.assertEqual(self.s1.y, 0)
         self.assertEqual(self.s1.size, 6)
+        self.assertEqual(self.s1.width, 6)
+        self.assertEqual(self.s1.height, 6)
 
         self.assertEqual(self.s2.id, 23)
         self.assertEqual(self.s2.size, 4)
+        self.assertEqual(self.s2.width, 4)
+        self.assertEqual(self.s2.height, 4)
         self.assertEqual(self.s2.x, 3)
         self.assertEqual(self.s2.y, 2)
 
@@ -33,9 +37,17 @@ class TestSquareClass(unittest.TestCase):
         """
         with self.assertRaisesRegex(TypeError, 'width must be an integer'):
             self.s1.size = '23'
+        with self.assertRaisesRegex(TypeError, 'x must be an integer'):
+            self.s1.x = True
+        with self.assertRaisesRegex(TypeError, 'y must be an integer'):
+            self.s1.y = 'Alx'
 
         with self.assertRaisesRegex(ValueError, 'width must be > 0'):
             self.s1.size = -10
+        with self.assertRaisesRegex(ValueError, 'x must be >= 0'):
+            self.s1.x = -3
+        with self.assertRaisesRegex(ValueError, 'y must be >= 0'):
+            self.s1.y = -8
 
     def test_square_area(self):
         """
