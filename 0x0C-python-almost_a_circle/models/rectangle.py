@@ -2,7 +2,7 @@
 """
 The module contains a class named Rectangle
 """
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -62,8 +62,12 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(attr))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(attr))
+        elif attr in ["width", "height"]: 
+            if value <= 0:
+                raise ValueError("{} must be > 0".format(attr))
+        elif attr in ["x", "y"]: 
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(attr))
 
     def area(self):
         """
