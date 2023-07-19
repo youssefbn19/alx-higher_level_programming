@@ -62,10 +62,10 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(attr))
-        elif attr in ["width", "height"]: 
+        elif attr in ["width", "height"]:
             if value <= 0:
                 raise ValueError("{} must be > 0".format(attr))
-        elif attr in ["x", "y"]: 
+        elif attr in ["x", "y"]:
             if value < 0:
                 raise ValueError("{} must be >= 0".format(attr))
 
