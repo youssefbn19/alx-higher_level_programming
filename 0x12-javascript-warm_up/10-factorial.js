@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Prints the addition of 2 integers.
+// Computes and prints a factorial.
 const args = process.argv;
 
 function factorial (a) {
