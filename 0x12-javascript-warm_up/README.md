@@ -1,0 +1,1 @@
+# ALX Project: JavaScript - Warm up
