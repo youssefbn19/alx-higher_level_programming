@@ -5,7 +5,7 @@ const len = args.length;
 const arr = [];
 
 if (len <= 3) {
-  console.log('0');
+  console.log(0);
 } else {
   for (let i = 2; i < len; i++) {
     arr.push(Number(args[i]));
