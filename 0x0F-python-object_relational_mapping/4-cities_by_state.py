@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def cities_by_states(params):
+def cities_by_state(params):
     """
     List all 'cities' from the database hbtn_0e_4_usa.
     Args:
@@ -29,4 +29,4 @@ def cities_by_states(params):
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
-        cities_by_states(sys.argv[1:])
+        cities_by_state(sys.argv[1:])
