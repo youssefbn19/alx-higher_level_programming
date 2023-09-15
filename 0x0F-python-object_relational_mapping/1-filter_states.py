@@ -7,7 +7,8 @@
 import MySQLdb
 import sys
 
-def filter_states(params):
+params = sys.argv
+if (len(params) == 4):
     state_db = MySQLdb.connect(host="localhost", port=3306,
                                user=params[1], passwd=params[2], db=params[3])
     cr = state_db.cursor()
@@ -20,7 +21,4 @@ def filter_states(params):
 
     cr.close()
     state_db.close()
-
-if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        filter_states(sys.argv)
+    
