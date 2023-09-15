@@ -13,7 +13,7 @@ if (len(params) == 4):
                                user=params[1], passwd=params[2], db=params[3])
     cr = state_db.cursor()
     cr.execute("SELECT * FROM states WHERE name LIKE 'N%'\
-               ORDER BY id")
+               ORDER BY states.id ASC")
 
     states = cr.fetchall()
     for state in states:
