@@ -18,7 +18,7 @@ def filter_states_by_name(params):
     state_db = MySQLdb.connect(host="localhost", port=3306,
                                user=params[1], passwd=params[2], db=params[3])
     cr = state_db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE '{}'\
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}'\
                ORDER BY states.id ASC".format(params[4])
     cr.execute(query)
     states = cr.fetchall()
