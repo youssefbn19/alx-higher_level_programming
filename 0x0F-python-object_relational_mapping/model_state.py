@@ -4,7 +4,7 @@
     a State and an instance Base = declarative_base().
 """
 from sqlalchemy import (VARCHAR, Column,
-                        Integer, PrimaryKeyConstraint,
+                        Integer, MetaData, PrimaryKeyConstraint,
                         UniqueConstraint)
 from sqlalchemy.orm import declarative_base
 
@@ -21,7 +21,7 @@ class State(Base):
         Base (class): The declarative base class wraps the mapper
         and the MetaData.
     """
-    __tablename__ = "state"
+    __tablename__ = "states"
     id = Column(Integer, autoincrement=True)
     name = Column(VARCHAR(128), nullable=False)
     __table_args__ = (
