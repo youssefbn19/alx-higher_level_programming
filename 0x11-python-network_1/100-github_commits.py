@@ -12,7 +12,7 @@ if __name__ == "__main__":
     res = requests.get(url, headers=header)
     data = res.json()
     sorted_by_date = sorted(data,
-                            key=lambda row: row["commit"]["author"]["date"])
+                            key=lambda row: row["commit"]["author"]["date"], reverse=True)
     for i in range(0, 10):
         commit = sorted_by_date[i]
         print(f"{commit['sha']}: {commit['commit']['author']['name']}")
