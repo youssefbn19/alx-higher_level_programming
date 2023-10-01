@@ -14,6 +14,9 @@ if __name__ == "__main__":
     sorted_by_date = sorted(data,
                             key=lambda row: row["commit"]["author"]["date"],
                             reverse=True)
-    for i in range(0, 10):
+    size = len(sorted_by_date)
+    if size > 10:
+        size = 10
+    for i in range(0, size):
         commit = sorted_by_date[i]
         print(f"{commit['sha']}: {commit['commit']['author']['name']}")
