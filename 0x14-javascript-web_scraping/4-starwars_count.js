@@ -3,18 +3,16 @@
 const request = require('request');
 const args = process.argv.slice(2);
 const character = 'https://swapi-api.alx-tools.com/api/people/18/';
-let numMovies = 0;
-if (args.length > 0) {
-  request.get(args[0], function (err, res, body) {
-    if (err) { return console.log(err); }
-    if (res.statusCode === 200) {
-      const data = JSON.parse(body);
-      for (const char of data.results) {
-        if (char.characters.includes(character)) {
-          numMovies++;
-        }
+request.get(args[0], function (err, res, body) {
+  if (err) { return console.log(err); }
+  if (res.statusCode === 200) {
+    let numMovies = 0;
+    const data = JSON.parse(body).results;
+    for (const char of data) {
+      if (char.characters.includes(character)) {
+        numMovies++;
       }
-      console.log(numMovies);
     }
-  });
-}
+    console.log(numMovies);
+  }
+});
